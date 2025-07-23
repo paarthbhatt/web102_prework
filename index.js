@@ -167,6 +167,9 @@ const displayStr = `A total of $${totalRaised.toLocaleString()} has been raised 
 
 
 // create a new DOM element containing the template string and append it to the description container
+const descriptionParagraph = document.createElement("p");
+descriptionParagraph.innerHTML = displayStr;
+descriptionContainer.appendChild(descriptionParagraph);
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
