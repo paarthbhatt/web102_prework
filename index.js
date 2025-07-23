@@ -49,12 +49,14 @@ function addGamesToPage(games) {
         `;
 
         // append the game to the games-container
+        gamesContainer.appendChild(gameCard);
 
     }
 }
 
 // call the function we just defined using the correct variable
 // later, we'll call this function using a different list of games
+addGamesToPage(GAMES_JSON);
 
 
 /*************************************************************************************
