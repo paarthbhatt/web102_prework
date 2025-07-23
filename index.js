@@ -91,6 +91,8 @@ raisedCard.innerHTML = `$${totalRaised.toLocaleString()}`;
 // grab number of games card and set its inner HTML
 const gamesCard = document.getElementById("num-games");
 
+gamesCard.innerHTML = `${GAMES_JSON.length}`;
+
 
 /*************************************************************************************
  * Challenge 5: Add functions to filter the funded and unfunded games
@@ -103,9 +105,12 @@ function filterUnfundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have not yet met their goal
-
+    const unfundedGames = GAMES_JSON.filter(game => {
+        return game.pledged < game.goal;
+    });
 
     // use the function we previously created to add the unfunded games to the DOM
+    addGamesToPage(unfundedGames);
 
 }
 
@@ -114,9 +119,12 @@ function filterFundedOnly() {
     deleteChildElements(gamesContainer);
 
     // use filter() to get a list of games that have met or exceeded their goal
+    const fundedGames = GAMES_JSON.filter(game => {
+        return game.pledged >= game.goal;
+    });
 
-
-    // use the function we previously created to add unfunded games to the DOM
+    // use the function we previously created to add funded games to the DOM
+    addGamesToPage(fundedGames);
 
 }
 
@@ -125,6 +133,7 @@ function showAllGames() {
     deleteChildElements(gamesContainer);
 
     // add all games from the JSON data to the DOM
+    addGamesToPage(GAMES_JSON);
 
 }
 
@@ -134,6 +143,9 @@ const fundedBtn = document.getElementById("funded-btn");
 const allBtn = document.getElementById("all-btn");
 
 // add event listeners with the correct functions to each button
+unfundedBtn.addEventListener("click", filterUnfundedOnly);
+fundedBtn.addEventListener("click", filterFundedOnly);
+allBtn.addEventListener("click", showAllGames);
 
 
 /*************************************************************************************
