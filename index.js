@@ -184,7 +184,65 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame, ...others] = sortedGames;
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameElement = document.createElement("p");
+firstGameElement.innerHTML = firstGame.name;
+firstGameContainer.appendChild(firstGameElement);
 
 // do the same for the runner up item
+const secondGameElement = document.createElement("p");
+secondGameElement.innerHTML = secondGame.name;
+secondGameContainer.appendChild(secondGameElement);
+
+/*************************************************************************************
+ * Challenge 8: Add search functionality
+ * Skills used: event listeners, filter, DOM manipulation
+ */
+
+// Search functionality
+function searchGames() {
+    const searchTerm = document.getElementById("search-input").value.toLowerCase().trim();
+    
+    if (searchTerm === "") {
+        showAllGames();
+        return;
+    }
+    
+    deleteChildElements(gamesContainer);
+    
+    const filteredGames = GAMES_JSON.filter(game => 
+        game.name.toLowerCase().includes(searchTerm) ||
+        game.description.toLowerCase().includes(searchTerm)
+    );
+    
+    addGamesToPage(filteredGames);
+    
+    // Optional: Show message if no games found
+    if (filteredGames.length === 0) {
+        const noResultsMessage = document.createElement("p");
+        noResultsMessage.innerHTML = `No games found matching "${searchTerm}". Try a different search term!`;
+        noResultsMessage.style.textAlign = "center";
+        noResultsMessage.style.fontSize = "18px";
+        noResultsMessage.style.color = "#666";
+        noResultsMessage.style.marginTop = "40px";
+        gamesContainer.appendChild(noResultsMessage);
+    }
+}
+
+function clearSearch() {
+    document.getElementById("search-input").value = "";
+    showAllGames();
+}
+
+// Event listeners for search
+document.getElementById("search-btn").addEventListener("click", searchGames);
+document.getElementById("clear-search-btn").addEventListener("click", clearSearch);
+
+// Allow Enter key to trigger search
+document.getElementById("search-input").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        searchGames();
+    }
+});

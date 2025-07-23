@@ -2,7 +2,26 @@
 
 body {
     font-family: 'Cabin';
-    background-color: #758190;
+    background: linear-gradient(135deg, #758190 0%, #8aa0b0 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 10px;
+}
+
+h1, h2, h3 {
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin: 30px 0;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
 }
 
 #tentacles {
@@ -11,12 +30,36 @@ body {
 
 .header {
     display: flex;
-    background-color: lightblue;
+    background: linear-gradient(90deg, lightblue 0%, #87ceeb 100%);
     padding: 1%;
     align-items: center;
+    justify-content: space-between;
     margin-left: -10px;
     margin-right: -10px;
     margin-top: -10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.nav-link {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link:hover {
+    background: rgba(255, 255, 255, 0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .stats-container {
@@ -30,12 +73,19 @@ body {
 }
 
 .stats-card {
-    background-color: #a8b0bc;
-    border-radius: 7px;
-    padding: 1%;
-    margin: 1%;
+    background: linear-gradient(145deg, #a8b0bc 0%, #b8c0cc 100%);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
     width: 100%;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stats-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
 }
 
 
@@ -56,21 +106,68 @@ body {
 }
 
 .game-card {
-    background-color: #FFFFFF;
-    padding: 1%;
-    margin: 1%;
+    background: linear-gradient(145deg, #FFFFFF 0%, #f8f9fa 100%);
+    padding: 20px;
+    margin: 15px;
     width: 300px;
     text-align: center;
-    border-radius: 7px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
 .game-card:hover {
     cursor: pointer;
-    box-shadow: 0 0 30px lightblue;
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(135, 206, 235, 0.4);
 }
 
 #button-container {
     text-align: center;
+    margin: 20px 0;
+}
+
+#search-container {
+    text-align: center;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(240, 248, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+#search-input {
+    font-family: 'Cabin';
+    padding: 12px 20px;
+    font-size: 16px;
+    border: 2px solid #87ceeb;
+    border-radius: 25px;
+    width: 300px;
+    margin-right: 10px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 10px rgba(74, 144, 226, 0.3);
+    transform: scale(1.02);
+}
+
+#search-btn, #clear-search-btn {
+    background: linear-gradient(45deg, #87ceeb 0%, #4a90e2 100%);
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 25px;
+    margin: 0 5px;
+}
+
+#search-btn:hover, #clear-search-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
 button {
