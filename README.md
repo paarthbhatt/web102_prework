@@ -23,10 +23,10 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='assets/Animation.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with ScreenToGif
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
@@ -36,11 +36,11 @@ GIF created with ...
 
 Describe any challenges encountered while building the app.
 
-Just faced challenges while accessing the files and connecting the images to the website. Nothing Major, :)
+Just faced challenges while accessing the files and connecting the images to the website. Nothing I can't handle.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2025] [PARTH BHATT]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
